@@ -65,7 +65,6 @@ div {
   justify-content: center;
   gap: 8px !important;
 
-
   text-decoration: none !important;
   font-size: 14px !important;
   line-height: 14px !important;
@@ -84,9 +83,8 @@ div {
   color: #ffffffb3 !important;
 }
 
-
-.btn_icon>svg,
-.list_icon>svg {
+.btn_icon > svg,
+.list_icon > svg {
   width: 16px;
   height: 16px;
   stroke: #f4b625;
@@ -96,22 +94,21 @@ div {
   width: 16px;
   height: 16px;
   stroke: #fff !important;
-
 }
 
 /* override */
 section.panel-3 {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .columns {
-    align-items:center;
-	column-gap:100px;
+  align-items: center;
+  column-gap: 100px;
 }
 
 .column-50 > * {
-    margin-bottom: 24px !important;
+  margin-bottom: 24px !important;
 }
 
 /* ---------------------------------------- hero section ------------------------------------------------ */
@@ -125,15 +122,14 @@ h1 {
 }
 
 h2 {
-/*   text-align: center; */
+  /*   text-align: center; */
 }
-
 
 .hero_section {
   position: relative;
   height: 700px;
   width: 100% !important;
-  background-image: url("/wp-content/uploads/2026/01/hp-banner-img.png");
+  /* background-image: url("/wp-content/uploads/2026/01/hp-banner-img.png"); */
   background-size: cover;
   background-position: center;
 }
@@ -141,10 +137,12 @@ h2 {
 .main {
   box-sizing: border-box;
   padding: 16px 48px !important;
-  background-image: linear-gradient(to right,
-      rgb(29, 77, 159),
-      rgba(29, 77, 159, 0.95),
-      rgba(29, 77, 159, 0.6));
+  background-image: linear-gradient(
+    to right,
+    rgb(29, 77, 159),
+    rgba(29, 77, 159, 0.95),
+    rgba(29, 77, 159, 0.6)
+  );
   width: 100%;
   height: 100%;
   display: flex;
@@ -180,7 +178,7 @@ h2 {
   gap: 20px;
 }
 
-.box_li>svg {
+.box_li > svg {
   stroke: #f4b625;
 }
 
@@ -189,7 +187,7 @@ h2 {
   gap: 15px !important;
 }
 
-.btn_red>svg {
+.btn_red > svg {
   width: 16px;
   height: 16px;
 }
@@ -203,13 +201,6 @@ h2 {
   gap: 15px !important;
   border-radius: 6px;
   text-decoration: none !important;
-}
-
-.btn_red:hover {
-  background: #740505 !important;
-}
-
-.btn_red p {
   font-size: 18px !important;
   font-family: Source Sans 3 !important;
   line-height: 18px !important;
@@ -219,18 +210,15 @@ h2 {
   color: #fff;
 }
 
+.btn_red:hover {
+  background: #740505 !important;
+}
+
 .btn_white {
   padding: 14px 38px !important;
   border-radius: 6px;
   text-decoration: none !important;
   border: 2px solid #fff !important;
-}
-
-.btn_white:hover {
-  background: #ffffff1a !important;
-}
-
-.btn_white p {
   font-size: 18px !important;
   line-height: 18px !important;
   font-weight: 800 !important;
@@ -239,11 +227,9 @@ h2 {
   color: #fff;
 }
 
-
-
-
-
-
+.btn_white:hover {
+  background: #ffffff1a !important;
+}
 
 .profile {
   box-sizing: border-box !important;
@@ -252,7 +238,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1D4BA1;
+  background-color: #1d4ba1;
 }
 
 .profile_inner {
@@ -262,7 +248,6 @@ h2 {
   justify-content: center;
   flex-direction: row;
   gap: 35px;
-
 }
 
 .men_p {
@@ -283,10 +268,6 @@ h2 {
 .men_info :is(p, h2) {
   color: #fff !important;
 }
-
-
-
-
 
 /* <!-- -------------------------------------------  box iocn list ------------------------------------------------ --> */
 .li_section_inner {
@@ -721,13 +702,7 @@ footer {
   padding-bottom: 89px !important;
 }
 
-
-
-
-
-
 /* ---------------------------- responsive --------------------------------------- */
-
 
 @media (max-width: 1023px) {
   body {
@@ -784,16 +759,7 @@ footer {
   .stikey_inner {
     gap: 20px !important;
   }
-
-
-
 }
-
-
-
-
-
-
 
 @media (max-width: 767px) {
   body {
@@ -812,7 +778,6 @@ footer {
   .two_btn {
     width: 100% !important;
   }
-
 
   .inner_w h1 {
     font-size: 48px;
@@ -893,7 +858,6 @@ footer {
     text-align: center;
   }
 
-
   .profile {
     padding: 64px 24px;
   }
@@ -908,14 +872,14 @@ footer {
     text-align: left;
   }
 
-  .men_info h2{
+  .men_info h2 {
     font-size: 32px !important;
   }
-  .men_info{
+  .men_info {
     gap: 20px;
   }
 
-  .men_info a{
+  .men_info a {
     width: 100%;
   }
 
@@ -924,9 +888,6 @@ footer {
   }
 
   img.men_p {
-    width:100%;
-}
-
-
-
+    width: 100%;
+  }
 }

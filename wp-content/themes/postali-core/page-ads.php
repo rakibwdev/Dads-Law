@@ -83,39 +83,42 @@
 
     <!-- Body start -->
 
-
     <div class="body-container">
-        <div class="hero_section">
+        <?php
+        $banner = get_field('banner_image');
+        $bg = $banner ? esc_url($banner['url']) : '';
+        ?>
+        <div class="hero_section" style="background-image: url('<?php echo $bg; ?>');">
             <div class="main">
                 <div class="inner_w">
-                    <div class="red_is">Oklahoma's Divorce Attorneys for Men</div>
-                    <h1>Divorce Doesn't Have to Destroy You</h1>
-                    <p>The system is stacked against men. Your money, your kids, your future — all on the line. We level the playing field. Call now.</p>
+                    <div class="red_is"><?php the_field('banner_title'); ?></div>
+                    <h1><?php the_field('banner_subtitle'); ?></h1>
+                    <p><?php the_field('banner_copy'); ?></p>
                     <div class="box_li">
                         <div class="list_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-gold-trust">
                                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                                 <path d="m9 11 3 3L22 4"></path>
                             </svg>
-                            <div class="li_text">100% free first call</div>
+                            <div class="li_text"><?php the_field('list_text_1'); ?></div>
                         </div>
                         <div class="list_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-gold-trust">
                                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                                 <path d="m9 11 3 3L22 4"></path>
                             </svg>
-                            <div class="li_text">100% free first call</div>
+                            <div class="li_text"><?php the_field('list_text_2'); ?></div>
                         </div>
                         <div class="list_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big w-4 h-4 text-gold-trust">
                                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                                 <path d="m9 11 3 3L22 4"></path>
                             </svg>
-                            <div class="li_text">100% free first call</div>
+                            <div class="li_text"><?php the_field('list_text_3'); ?></div>
                         </div>
                     </div>
                     <div class="two_btn">
-                        <a href="tel:9189849424" class="btn_red">
+                        <!-- <a href="tel:9189849424" class="btn_red">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
@@ -124,6 +127,38 @@
                         <a href="#pre-footer" class="btn_white">
                             <p>Stand Up for Your Rights</p>
                         </a>
+
+                        <a title="call <?php the_field('phone_number', 'options'); ?>" href="tel:<?php the_field('phone_number', 'options'); ?>" class="btn_red"><?php the_field('phone_number', 'options'); ?></a> -->
+
+                        <?php
+                        $cta_group = get_field('banner_cta_group');
+                        $cta_link  = $cta_group['phone_number'];
+
+                        if ($cta_link && !empty($cta_link['url'])) :
+
+                            // Remove http/https if added by ACF
+                            $phone = preg_replace('#^https?://#', '', $cta_link['url']);
+
+                            // Keep only numbers and +
+                            $phone_clean = preg_replace('/[^0-9+]/', '', $phone);
+                        ?>
+
+                            <a href="tel:<?php echo esc_attr($phone_clean); ?>" class="btn_red">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+
+                                <?php echo esc_html($cta_link['title']); ?>
+                            </a>
+
+                        <?php endif; ?>
+
+                        <?php $cta_group = get_field('banner_cta_group');
+                        $cta_link = $cta_group['contact_link'];
+                        if ($cta_link) : ?>
+                            <a href="<?php echo $cta_link['url']; ?>" class="btn_white"><?php echo $cta_link['title']; ?></a>
+                        <?php endif; ?>
+
                     </div>
                 </div>
             </div>
@@ -142,19 +177,19 @@
                         <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
                         <circle cx="12" cy="8" r="6"></circle>
                     </svg>
-                    <div class="li_text">AV Preeminent Rated</div>
+                    <div class="li_text"><?php the_field('list_text_1'); ?></div>
                 </div>
                 <div class="li_section_icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star w-5 h-5 text-gold-trust">
                         <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
                     </svg>
-                    <div class="li_text">Avvo 10.0 Superb</div>
+                    <div class="li_text"><?php the_field('list_text_2'); ?></div>
                 </div>
                 <div class="li_section_icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield w-5 h-5 text-gold-trust">
                         <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                     </svg>
-                    <div class="li_text">BBB Accredited</div>
+                    <div class="li_text"><?php the_field('list_text_3'); ?></div>
                 </div>
                 <div class="li_section_icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale w-5 h-5 text-gold-trust">
@@ -164,7 +199,7 @@
                         <path d="M12 3v18"></path>
                         <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
                     </svg>
-                    <div class="li_text">NACDL Member</div>
+                    <div class="li_text"><?php the_field('list_text_4'); ?></div>
                 </div>
 
             </div>
