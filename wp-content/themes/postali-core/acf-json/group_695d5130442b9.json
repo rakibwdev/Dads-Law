@@ -1,0 +1,127 @@
+{
+    "key": "group_695d5130442b9",
+    "title": "Pre-Footer",
+    "fields": [
+        {
+            "key": "field_695d51303def7",
+            "label": "Title",
+            "name": "pre_footer_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Good Dads Deserve a Fair Shake",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_695d514b3def8",
+            "label": "Subtitle",
+            "name": "pre_footer_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Appears above the title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Divorce Custody Paternity & More – Our Attorneys Don't Let Fathers Fight Alone",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_695d51603def9",
+            "label": "Copy",
+            "name": "pre_footer_copy",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "You don’t deserve to be sidelined or steamrolled by a family court system that treats fathers as an afterthought. Let us speak for you, guide you, and stand up for you so you can focus on being the dad you were meant to be.",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_695d516b3defa",
+            "label": "Phone Number",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Phone Number can be edited under Core Site Setup",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_695d51beb6e9a",
+            "label": "Form Embed",
+            "name": "pre_footer_form_embed",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "[gravityform id=\"2\" title=\"false\"]",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1767725324
+}

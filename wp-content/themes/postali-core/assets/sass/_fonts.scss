@@ -1,0 +1,161 @@
+/**
+ * Web Font Styles, H Styles, Body Text Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+/* Fonts */
+body, h1, h2, h3, h4, h5, h6, p, a, ul {
+    // color: $body-text-color;
+} 
+p, a, ul, ol {
+    margin-bottom: 24px !important;
+}
+ul li, ol li {
+    margin: 0 0 0 20px;
+    font-size: 18px;
+}
+dl, blockquote, img {
+
+}
+
+a {
+    @include link;
+}
+
+.btn:not(.btn-search) {
+    display:inline-block;
+    padding:12px 28px;
+    text-decoration:none;
+    transition:$trans;
+    font-size: 16px;
+    text-decoration: none !important;
+    @include button;
+    text-transform: uppercase;
+    position: relative;
+    &:after {
+        content: "\e901";
+        font-size: 20px;
+        font-family: $icomoon;
+        transition: $trans;
+        position: absolute;
+        display: inline-block;
+        opacity: 0;
+        top:11px;
+        left: calc(100% - 36px);
+    }
+    &:hover {
+        background: $reddark !important;
+        &:after {
+            opacity: 1;
+            left: calc(100% - 24px);
+        }
+    }
+    &.btn-t-white {
+        background: none !important;
+        border: solid 1px $white;
+    }
+}
+
+.slider-arrows-custom, .steps-slider-arrows-custom, .mobile-pa-slider-arrows {
+    position: absolute;
+    right: 32px;
+    bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    width: 96px;
+    height: 36px;
+    @include respond(phone) {
+        width: 70px;
+    }
+    .slick-arrow {
+        height: 100% !important;
+        width: 32px !important;
+        cursor: pointer;
+        &:before {
+            font-family: $icomoon;
+            color: $white;
+            font-size: 32px !important;
+            opacity: 1;
+            height: 100% !important;
+            width: 32px !important;
+            position: relative;
+        }
+        &.slick-prev {
+            left: 0;
+            &:before {
+                content: "\e902";
+                
+            }
+        }
+        &.slick-next {
+            right: 0;
+            &:before {
+                content: "\e901";
+            }
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, p, a, span {
+    margin-top: 0;
+    margin-bottom: 24px !important;
+}
+
+p, a:not(.btn) {
+    @include bodyr;
+}
+
+a:not(.btn) {
+    font-weight: $bold !important;
+    &:hover {
+        text-decoration-color: $bluebright !important;
+    }
+}
+
+h1 {
+    @include headingl;
+    text-transform: uppercase !important;
+}
+
+h2 {
+    @include headingm;
+}
+
+h3 {
+    @include headings;
+}
+
+h4 {
+    @include headings-sans;
+    text-transform: uppercase;
+}
+
+.body-container {
+    ul li, 
+    ol li {
+        margin: 0 0 8px 0;
+        @include bodyr;
+        color: $navy;
+    }
+
+    ul {
+        margin-bottom:30px;
+
+        li {
+            a {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.eyebrow {
+    @include eyebrow;
+    text-transform: uppercase;
+}
