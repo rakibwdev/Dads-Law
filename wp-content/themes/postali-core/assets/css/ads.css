@@ -251,7 +251,7 @@ h2 {
 }
 
 .men_p {
-  width: 300px !important;
+  width: 350px !important;
   border-radius: 16px !important;
   flex-shrink: 0 !important;
   overflow: hidden !important;
@@ -392,6 +392,12 @@ h2 {
   gap: 15px !important;
   height: fit-content;
   text-decoration: none !important;
+  font-size: 18px !important;
+  line-height: 18px !important;
+  text-transform: uppercase;
+  font-weight: 700 !important;
+  color: #bc0c0c;
+  letter-spacing: 1px !important;
 }
 
 .third_btn_icon:hover {
@@ -402,15 +408,6 @@ h2 {
   stroke: #bc0c0c;
   width: 16px;
   height: 16px;
-}
-
-.third_btn_icon p {
-  font-size: 18px !important;
-  line-height: 18px !important;
-  text-transform: uppercase;
-  font-weight: 700 !important;
-  color: #bc0c0c;
-  letter-spacing: 1px !important;
 }
 
 /* ----------------------------------------------- Third section ------------------------------------ */
