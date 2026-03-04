@@ -435,8 +435,6 @@
         <!-- ------------------------------------------- section ------------------------------------------------ -->
 
 
-
-
         <div class="fourth_section">
             <div class="fourth_inner">
                 <div class="red_is"><?php the_field('p6_title'); ?></div>
@@ -600,9 +598,6 @@
     </div>
 
 
-
-
-
     <!-- ------------------------------------------- section ------------------------------------------------ -->
 
     <div class="seventh_section">
@@ -675,16 +670,9 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
     </div>
     <!-- Body End -->
+
 
     <!-- footer start -->
     <footer>
@@ -711,12 +699,6 @@
         <div class="footor_stikey">
             <div class="stikey_inner">
                 <p class="f_text"><?php the_field('sticky_title'); ?></p>
-                <!-- <a href="tel:9189849424" class="third_btn_icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    <p>Call (918) 984-9424</p>
-                </a> -->
                 <?php
                 $phone_call = get_field('sticky_phone');
                 if ($phone_call && !empty($phone_call['url'])) :
