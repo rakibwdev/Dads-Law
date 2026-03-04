@@ -783,8 +783,26 @@
             ]
         },
         {
+            "key": "field_69a65fa44af81",
+            "label": "P4.5 Do You?",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
             "key": "field_69a69b13a54e7",
-            "label": "Single Matters 7",
+            "label": "Already Has a Lawyer",
             "name": "single_matters_7",
             "aria-label": "",
             "type": "group",
@@ -1333,6 +1351,170 @@
             ]
         },
         {
+            "key": "field_69a65fa45f432",
+            "label": "P8 Do You?",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69a65fa45b50f",
+            "label": "Do You?",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This field can be edited in the P4.5 Do You?",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_69a65fa473d4f",
+            "label": "P9 FAQ",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69a65fa474441",
+            "label": "Title",
+            "name": "p9_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Appears overlaid on the left column image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69a65fa4839c6",
+            "label": "Subtitle",
+            "name": "p9_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Appears above the title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69a65fa4c10a0",
+            "label": "FAQs",
+            "name": "p7_faqs",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_69a65fa88b4f4",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_69a65fa4c10a0"
+                },
+                {
+                    "key": "field_69a65fa88c25e",
+                    "label": "Copy",
+                    "name": "copy",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "parent_repeater": "field_69a65fa4c10a0"
+                }
+            ]
+        },
+        {
             "key": "field_69a65fa43ab11",
             "label": "Mobile Slider Images",
             "name": "testimonial_mobile_slider_images",
@@ -1382,24 +1564,6 @@
                     "parent_repeater": "field_69a65fa43ab11"
                 }
             ]
-        },
-        {
-            "key": "field_69a65fa44af81",
-            "label": "Legal Tools",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
         },
         {
             "key": "field_69a65fa44f2c0",
@@ -1456,27 +1620,6 @@
             ]
         },
         {
-            "key": "field_69a65fa45b50f",
-            "label": "Copy",
-            "name": "p2_copy",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
             "key": "field_69a65fa45b8f5",
             "label": "Practice Areas",
             "name": "practice_areas_home",
@@ -1505,24 +1648,6 @@
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
-        },
-        {
-            "key": "field_69a65fa45f432",
-            "label": "Panel 3 ( Contact)",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
         },
         {
             "key": "field_69a65fa4679c8",
@@ -1591,45 +1716,6 @@
             "aria-label": "",
             "type": "text",
             "instructions": "Use Gravity Forms shortcode",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_69a65fa473d4f",
-            "label": "Panel 4 (Testimonials Slider)",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_69a65fa474441",
-            "label": "Title",
-            "name": "p4_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Appears overlaid on the left column image",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1749,27 +1835,6 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_69a65fa4839c6",
-            "label": "Subtitle",
-            "name": "p5_subtitle",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Appears above the title",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -2276,74 +2341,6 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_69a65fa4c10a0",
-            "label": "FAQs",
-            "name": "p7_faqs",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Add Row",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_69a65fa88b4f4",
-                    "label": "Title",
-                    "name": "title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_69a65fa4c10a0"
-                },
-                {
-                    "key": "field_69a65fa88c25e",
-                    "label": "Copy",
-                    "name": "copy",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "allow_in_bindings": 0,
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0,
-                    "parent_repeater": "field_69a65fa4c10a0"
-                }
-            ]
-        },
-        {
             "key": "field_69a65fa4c4e47",
             "label": "Panel 8 (Resources)",
             "name": "",
@@ -2513,5 +2510,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772600487
+    "modified": 1772603049
 }

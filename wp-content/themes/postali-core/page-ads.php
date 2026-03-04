@@ -518,71 +518,63 @@
     <div class="third_red">
         <div class="third_inner">
             <div class="left_section">
-                <h3>She Already Has a Lawyer. Do You?</h3>
-                <p>Temporary orders set the tone for everything. Don't walk into court unprepared.</p>
+                <?php $single_matters = get_field('single_matters_7');
+                $sm_heading = $single_matters['sub_heading'];
+                $sm_description = $single_matters['sub_description'];
+                if ($sm_heading && $sm_description) : ?>
+                    <h3><?php echo $sm_heading; ?></h3>
+                    <p><?php echo $sm_description; ?></p>
+                <?php endif; ?>
             </div>
-            <a href="tel:9189849424" class="third_btn_icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <p>Call (918) 984-9424</p>
-            </a>
+
+            <?php
+            $phone_call = get_field('phone_call');
+            if ($phone_call && !empty($phone_call['url'])) :
+
+                // Remove http/https if added by ACF
+                $phone = preg_replace('#^https?://#', '', $phone_call['url']);
+
+                // Keep only numbers and +
+                $phone_clean = preg_replace('/[^0-9+]/', '', $phone);
+            ?>
+
+                <a href="tel:<?php echo esc_attr($phone_clean); ?>" class="third_btn_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+
+                    <?php echo esc_html($phone_call['title']); ?>
+                </a>
+
+            <?php endif; ?>
         </div>
     </div>
 
-
-
-
-
-
-
-
+    <!--------------------------------------------------------------------------- FAQ -------------------------------------------------------->
     <div class="sixth_section">
         <div class="sixth_inner">
-            <div class="red_is">Common Questions</div>
-            <h2>Divorce FAQ for Men</h2>
+            <div class="red_is"><?php the_field('p9_title'); ?></div>
+            <h2><?php the_field('p9_subtitle'); ?></h2>
+
             <div class="sixth_section_accordion">
 
-                <div class="accordion">
+                <?php if (have_rows('p7_faqs')) : ?>
+                    <div class="accordion">
+                        <?php while (have_rows('p7_faqs')) : the_row(); ?>
+                            <div class="accordions">
 
-                    <details open>
-                        <summary>Do Oklahoma courts favor mothers over fathers?</summary>
-                        <p>
-                            Legally, no. Custody decisions should be based on the best interests of the child, not the gender of the parent. However, fathers who actively assert their role and document involvement tend to achieve stronger outcomes.
-                        </p>
-                    </details>
+                                <details>
+                                    <summary><?php the_sub_field('title'); ?></summary>
+                                    <p> <?php the_sub_field('copy'); ?> </p>
+                                </details>
 
-                    <details>
-                        <summary>Can fathers get joint or primary custody?</summary>
-                        <p>
-                            Yes. Fathers who demonstrate consistent involvement and stability may be awarded joint or primary custody when the facts support it.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>How long does divorce take in Oklahoma?</summary>
-                        <p>
-                            Timelines vary. Some cases resolve in weeks by agreement, while contested cases may last months or longer depending on complexity.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>Should I represent myself in divorce?</summary>
-                        <p>
-                            It is extremely risky. One missed filing or one concession in a temporary order hearing can cost you parenting time for years. Do not gamble with your children's future.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>What should I do first when facing divorce?</summary>
-                        <p>
-                            Speak with a divorce attorney before making any agreements. Early decisions — especially temporary orders — often shape final outcomes.
-                        </p>
-                    </details>
-
-                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
 
             </div>
+
         </div>
     </div>
 
