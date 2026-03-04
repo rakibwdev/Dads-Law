@@ -616,8 +616,8 @@
                         alt="<?php echo esc_attr($logo['alt']); ?>">
                 <?php endif; ?>
             </div>
-            <h2>Stop Losing. Start Fighting Back.</h2>
-            <p class="p_text">Every hour you wait, the court moves forward without you. Your kids, your money, your future — call now before it's too late.</p>
+            <h2><?php the_field('p10_title'); ?></h2>
+            <p class="p_text"><?php the_field('p10_subtitle'); ?></p>
 
             <div class="box_li">
                 <div class="list_icon">
@@ -625,30 +625,51 @@
                         <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                         <path d="m9 11 3 3L22 4"></path>
                     </svg>
-                    <div class="li_text">Available 24/7 for emergencies</div>
+                    <div class="li_text"><?php the_field('p10_li_text_1'); ?></div>
                 </div>
                 <div class="list_icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-4 h-4 text-gold-trust">
                         <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                         <path d="m9 12 2 2 4-4"></path>
                     </svg>
-                    <div class="li_text">Confidential & no obligation</div>
+                    <div class="li_text"><?php the_field('p10_li_text_2'); ?></div>
                 </div>
             </div>
 
             <div class="two_btn">
-                <a href="tel:9189849424" class="btn_red">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    <p>Call Now — (918) 984-9424</p>
-                </a>
-                <a href="/contact-us/" class="btn_white">
-                    <p>Request Consultation</p>
-                </a>
+
+                <?php
+                $cta_group = get_field('p10_contact_buttons');
+                $cta_link  = $cta_group['p10_phone'];
+
+                if ($cta_link && !empty($cta_link['url'])) :
+
+                    // Remove http/https if added by ACF
+                    $phone = preg_replace('#^https?://#', '', $cta_link['url']);
+
+                    // Keep only numbers and +
+                    $phone_clean = preg_replace('/[^0-9+]/', '', $phone);
+                ?>
+
+                    <a href="tel:<?php echo esc_attr($phone_clean); ?>" class="btn_red">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+
+                        <?php echo esc_html($cta_link['title']); ?>
+                    </a>
+
+                <?php endif; ?>
+
+                <?php $cta_group = get_field('p10_contact_buttons');
+                $cta_link = $cta_group['p10_contact_us'];
+                if ($cta_link) : ?>
+                    <a href="<?php echo $cta_link['url']; ?>" class="btn_white"><?php echo $cta_link['title']; ?></a>
+                <?php endif; ?>
+
             </div>
 
-            <p class="op_text">No fees unless we take your case. Your first call is always free.</p>
+            <p class="op_text"><?php the_field('p10_copy'); ?></p>
 
 
         </div>
