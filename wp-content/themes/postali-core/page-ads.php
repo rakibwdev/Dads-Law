@@ -53,7 +53,13 @@
         <div class="header_new_page">
             <div class="logo_new">
                 <a href="/">
-                    <img src="/wp-content/uploads/2026/01/dadslaw-logo.svg" alt="">
+                    <?php
+                    $logo = get_field('logo');
+
+                    if ($logo) : ?>
+                        <img src="<?php echo esc_url($logo['url']); ?>"
+                            alt="<?php echo esc_attr($logo['alt']); ?>">
+                    <?php endif; ?>
                 </a>
             </div>
 
@@ -63,17 +69,32 @@
                         <circle cx="12" cy="12" r="10" stroke="#F4B625" fill="none" stroke-width="2px"></circle>
                         <polyline points="12 6 12 12 16 14" stroke="#F4B625" fill="none" stroke-width="2px"></polyline>
                     </svg>
-                    <div>Consultations Available Now</div>
+                    <div><?php the_field('li_text'); ?></div>
                 </div>
 
-                <div class="btn_icon">
-                    <a href="tel:+19189849424" class="btn_link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="#FFFFFF" fill="none" stroke-width="2px"></path>
-                        </svg>
-                        <p>(918) 984-9424</p>
-                    </a>
-                </div>
+                <?php
+                $phone_call = get_field('header_phone');
+                if ($phone_call && !empty($phone_call['url'])) :
+
+                    // Remove http/https if added by ACF
+                    $phone = preg_replace('#^https?://#', '', $phone_call['url']);
+
+                    // Keep only numbers and +
+                    $phone_clean = preg_replace('/[^0-9+]/', '', $phone);
+                ?>
+                    <div class="btn_icon">
+                        <a href="tel:<?php echo esc_attr($phone_clean); ?>" class="btn_link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <p>
+                                <?php echo esc_html($phone_call['title']); ?>
+
+                            </p>
+                        </a>
+                    </div>
+                <?php endif; ?>
+
             </nav>
         </div>
 
@@ -587,7 +608,13 @@
     <div class="seventh_section">
         <div class="seventh_inner">
             <div class="red_is">
-                <img src="/wp-content/uploads/2026/01/dadslaw-logo.svg" alt="" class="log">
+                <?php
+                $logo = get_field('logo');
+
+                if ($logo) : ?>
+                    <img src="<?php echo esc_url($logo['url']); ?>"
+                        alt="<?php echo esc_attr($logo['alt']); ?>">
+                <?php endif; ?>
             </div>
             <h2>Stop Losing. Start Fighting Back.</h2>
             <p class="p_text">Every hour you wait, the court moves forward without you. Your kids, your money, your future — call now before it's too late.</p>
@@ -643,7 +670,13 @@
 
         <div class="footor">
             <div class="footor_inner">
-                <img src="/wp-content/uploads/2026/01/dadslaw-logo.svg" alt="" class="footor_log">
+                <?php
+                $logo = get_field('logo');
+
+                if ($logo) : ?>
+                    <img class="footor_log" src="<?php echo esc_url($logo['url']); ?>"
+                        alt="<?php echo esc_attr($logo['alt']); ?>">
+                <?php endif; ?>
                 <p>© <time datetime="2026">2026</time> Dads.Law — Dedicated Fathers' Rights Lawyers in Tulsa, Oklahoma. This site is for informational purposes only and does not constitute legal advice.</p>
             </div>
         </div>

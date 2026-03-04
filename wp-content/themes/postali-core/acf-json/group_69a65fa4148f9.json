@@ -3,6 +3,88 @@
     "title": "Google Ads",
     "fields": [
         {
+            "key": "field_69a65fa47f858",
+            "label": "Header",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_69a65fa48be2c",
+            "label": "Logo",
+            "name": "logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_69a7d4ae8c734",
+            "label": "Li Text",
+            "name": "li_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69a65fa4b4e1e",
+            "label": "Phone Number",
+            "name": "header_phone",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_69a65fa426609",
             "label": "P1 Banner",
             "name": "",
@@ -1382,7 +1464,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "This field can be edited in the P4.5 Do You?",
+            "message": "This field can be edited in the \"P4.5 Do You?\" Field.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -1513,6 +1595,24 @@
                     "parent_repeater": "field_69a65fa4c10a0"
                 }
             ]
+        },
+        {
+            "key": "field_69a65fa4ccf49",
+            "label": "Pre-Footer",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_69a65fa43ab11",
@@ -1811,24 +1911,6 @@
             ]
         },
         {
-            "key": "field_69a65fa47f858",
-            "label": "Panel 5 (Team)",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
             "key": "field_69a65fa47fe1a",
             "label": "Title",
             "name": "p5_title",
@@ -1886,32 +1968,6 @@
             },
             "return_format": "array",
             "allow_in_bindings": 0
-        },
-        {
-            "key": "field_69a65fa48be2c",
-            "label": "Right Column Image",
-            "name": "p5_right_column_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
         },
         {
             "key": "field_69a65fa48f792",
@@ -2225,24 +2281,6 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_69a65fa4b4e1e",
-            "label": "Phone Number",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Phone Number can be edited under Core Site Setup",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
             "key": "field_69a65fa4b56e1",
             "label": "Panel 7 (FAQs)",
             "name": "",
@@ -2451,24 +2489,6 @@
             ]
         },
         {
-            "key": "field_69a65fa4ccf49",
-            "label": "Pre-Footer",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
             "key": "field_69a65fa4d09aa",
             "label": "Pre-Footer CTA",
             "name": "pre_footer_cta",
@@ -2510,5 +2530,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772603049
+    "modified": 1772607340
 }
