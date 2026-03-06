@@ -222,14 +222,36 @@
             <div class="container">
                 <div class="columns">
                     <div class="column-50 block">
-                        <p class="eyebrow"><?php the_field('p3_subtitle', 387); ?></p>
-                        <h2><?php the_field('p3_title', 387); ?></h2>
-                        <?php the_field('p3_copy', 387); ?>
-                        <a title="call <?php the_field('phone_number', 'options'); ?>" href="tel:<?php the_field('phone_number', 'options'); ?>" class="btn"><?php the_field('phone_number', 'options'); ?></a>
+                        <p class="eyebrow"><?php the_field('p3_title'); ?></p>
+                        <h2><?php the_field('p3_sub_title'); ?></h2>
+                        <p><?php the_field('p3_description'); ?></p>
+
+                        <?php
+                        $phone_call = get_field('p3_phone');
+                        if ($phone_call && !empty($phone_call['url'])) :
+
+                            // Remove http/https if added by ACF
+                            $phone = preg_replace('#^https?://#', '', $phone_call['url']);
+
+                            // Keep only numbers and +
+                            $phone_clean = preg_replace('/[^0-9+]/', '', $phone);
+                        ?>
+                            <div class="btn_icon">
+                                <a href="tel:<?php echo esc_attr($phone_clean); ?>" class="btn_link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                    <p>
+                                        <?php echo esc_html($phone_call['title']); ?>
+                                    </p>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+
                     </div>
                     <div class="column-50 block">
                         <div class="form-title-wrapper">
-                            <h4 class="form-title"><?php the_field('p3_form_title', 387); ?></h4>
+                            <h4 class="form-title"><?php the_field('p3_form_title'); ?></h4>
                             <?php echo do_shortcode(get_field('p3_form_embed', 387)); ?>
                         </div>
                     </div>
@@ -398,37 +420,37 @@
 
 
         <div class="profile">
-            <?php
-            $getCurentAuthor = get_field('attorney-author');
 
-            if (!empty($getCurentAuthor)) :
+            <div class="profile_inner">
+                <img src="<?php echo esc_url(get_field('p5_image')['url']); ?>" alt="<?php the_field('p5_title'); ?>" class="men_p" />
+                <div class="men_info">
+                    <h2><?php the_field('p5_title') ?></h2>
+                    <div class="red_is"><?php the_field('p5_sub_title') ?></div>
+                    <p><?php the_field('p5_description') ?></p>
+                    <?php
+                    $phone_call = get_field('p5_phone');
+                    if ($phone_call && !empty($phone_call['url'])) :
 
-                $author_id = $getCurentAuthor[0];
+                        // Remove http/https if added by ACF
+                        $phone = preg_replace('#^https?://#', '', $phone_call['url']);
 
-                $first_name = get_field('first_name', $author_id);
-                $last_name  = get_field('last_name', $author_id);
-
-                $author_title = trim($first_name . ' ' . $last_name);
-                $author_position = get_field('position', $author_id);
-                $author_intro_copy = get_field('intro_copy', $author_id);
-                $author_image = get_the_post_thumbnail_url($author_id);
-            ?>
-                <div class="profile_inner">
-                    <img src="<?php echo esc_url($author_image); ?>" alt="<?php echo esc_attr($author_title); ?>" class="men_p" />
-                    <div class="men_info">
-                        <h2><?php echo esc_html($author_title); ?></h2>
-                        <div class="red_is"><?php echo esc_html($author_position); ?></div>
-                        <p><?php echo wp_kses_post($author_intro_copy); ?></p>
-                        <a href="#pre-footer" class="btn_red">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <p>Contact <?php echo esc_html($author_title); ?></p>
-                        </a>
-                    </div>
-
+                        // Keep only numbers and +
+                        $phone_clean = preg_replace('/[^0-9+]/', '', $phone);
+                    ?>
+                        <div class="btn_icon">
+                            <a href="tel:<?php echo esc_attr($phone_clean); ?>" class="btn_link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <p>
+                                    <?php echo esc_html($phone_call['title']); ?>
+                                </p>
+                            </a>
+                        </div>
+                    <?php endif; ?>
                 </div>
-            <?php endif; ?>
+
+            </div>
         </div>
 
 
