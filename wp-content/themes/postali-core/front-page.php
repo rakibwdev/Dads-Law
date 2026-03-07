@@ -16,6 +16,57 @@ get_header(); ?>
                     <h1 class="eyebrow"><?php the_field('banner_title'); ?></h1>
                     <p class="large-subtitle"><?php the_field('banner_subtitle'); ?></p>
                     <p><?php the_field('banner_copy'); ?></p>
+                    <p>test</p>
+
+
+                    <?php
+                    $getCurentAuthor = get_field('attorney-author') ?: [];
+                    if (!empty($getCurentAuthor)) {
+                        $author_id = $getCurentAuthor[0];
+                        $author_title = get_field('first_name', $author_id) . ' ' . get_field('last_name', $author_id);
+                        $author_position = get_field('position', $author_id);
+                        $author_image = get_the_post_thumbnail_url($author_id);
+                    ?>
+                        <style>
+                            .attorney-author {
+                                display: flex;
+                                align-items: stretch;
+                                gap: 20px;
+
+                                h3 {
+                                    margin: 0px !important;
+                                    font-size: 20px !important;
+                                    color: #f0f0f1 !important;
+                                }
+
+                                p {
+                                    margin: 0px !important;
+                                }
+
+                                img {
+                                    max-width: 40px;
+                                    aspect-ratio: 1/1;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                }
+                            }
+                        </style>
+                        <div class="container">
+                            <div class="attorney-author">
+                                <?php if ($author_image) : ?>
+                                    <img src="<?php echo esc_url($author_image); ?>" alt="<?php echo esc_attr($author_title); ?>" />
+                                <?php endif; ?>
+                                <div class="author-info">
+                                    <h3>Author By: <?php echo esc_html($author_title); ?></h3>
+                                    <p><?php echo esc_html($author_position); ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+
+
                     <div class="cta-wrapper">
                         <a title="call <?php the_field('phone_number', 'options'); ?>" href="tel:<?php the_field('phone_number', 'options'); ?>" class="btn"><?php the_field('phone_number', 'options'); ?></a>
                         <?php $cta_group = get_field('banner_cta_group');
